@@ -1,5 +1,5 @@
-
 import "./App.css";
+
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { BrowserRouter,Route, Routes } from "react-router-dom";
 import BusPage from "./components/Buspage";
 import SubwayPage from "./components/Subwaypage";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
