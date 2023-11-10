@@ -24,7 +24,7 @@ const App = ({ naver }) => {
           <Header />
           <Routes>
             <Route path="/bus" element={<BusPage naver={naver}/>}></Route>
-            <Route path="/" element={<SubwayPage naver={naver}/>}></Route>
+            <Route path="/subway" element={<SubwayPage naver={naver}/>}></Route>
           </Routes>
           <Footer>
           </Footer>
