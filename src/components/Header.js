@@ -11,9 +11,12 @@ const HeaderWrapper = styled.header`
   width: 100%; 
   display: flex;
   justify-content: center;
+  padding-bottom:5%;
 `;
 
 const LogoImage = styled.img`
+  width: auto;
+  height: 100%;
   max-width: 40%;
 `;
 
