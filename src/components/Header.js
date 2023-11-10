@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import logoImage from '../images/logo.png'
 const HeaderWrapper = styled.header`
   font-size: 24px;
-  margin-bottom: 20px;
+  text-align:center;
+`;
+
+const LogoImage = styled.img`
+  max-width: 70%;
+  height: auto;
+  margin:0 auto;
 `;
 
 const Header = () => {
   return (
     <HeaderWrapper>
-      웹페이지 기본 레이아웃
+      <LogoImage src={logoImage} alt="로고 이미지" />
     </HeaderWrapper>
   );
 };
