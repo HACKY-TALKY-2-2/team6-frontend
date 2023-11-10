@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-undef */
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10,
+  };
+
+  var map = new naver.maps.Map("map", mapOptions);
+
+  return <div className="App"></div>;
 }
 
 export default App;
