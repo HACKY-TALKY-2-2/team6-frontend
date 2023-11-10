@@ -1,10 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* eslint-disable no-undef */
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+var mapOptions = {
+  center: new naver.maps.LatLng(37.3595704, 127.105399),
+  zoom: 10,
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+var map = new naver.maps.Map("map", mapOptions);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
