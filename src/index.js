@@ -5,8 +5,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 var mapOptions = {
-  center: new naver.maps.LatLng(37.3595704, 127.105399),
-  zoom: 10,
+  center: new naver.maps.LatLng(37.501, 127.037),
+  zoom: 17,
 };
 
 var map = new naver.maps.Map("map", mapOptions);
