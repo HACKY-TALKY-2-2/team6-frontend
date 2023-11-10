@@ -22,6 +22,8 @@ const BusPage = ({ naver }) => {
       center: new naver.maps.LatLng(37.501, 127.037),
       zoom: 17,
     };
+    
+
     const map = new naver.maps.Map("map", mapOptions);
     //버스아이콘 초기 위치
     const firstbusInitialPosition = new naver.maps.LatLng(37.505, 127.0371);
@@ -48,6 +50,20 @@ const BusPage = ({ naver }) => {
       map: map,
       position: firstbusInitialPosition,
       icon: bus2,
+    });
+
+    const gsTowerMarkerContent = document.createElement('div');
+    gsTowerMarkerContent.style.backgroundColor = 'white';
+    gsTowerMarkerContent.style.padding = '5px';
+    gsTowerMarkerContent.style.borderRadius = '5px';
+    gsTowerMarkerContent.style.fontWeight = 'bold';
+    gsTowerMarkerContent.innerText = '123';
+
+    const gsTowerMarker = new naver.maps.Marker({
+       map: map,
+      position: new naver.maps.LatLng(37.50185, 127.0371),
+      content: gsTowerMarkerContent,
+      zIndex: 1, 
     });
 
     // 위치 업데이트 함수 (예시로 1초마다 랜덤 위치로 업데이트)
