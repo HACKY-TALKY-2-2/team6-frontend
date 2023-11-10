@@ -10,6 +10,10 @@ var mapOptions = {
 };
 
 var map = new naver.maps.Map("map", mapOptions);
+const gsTowerMarker = new naver.maps.Marker({
+  map: map,
+  position: new naver.maps.LatLng(37.50185, 127.0371),
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
