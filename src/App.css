@@ -6,7 +6,7 @@
   height: 20px;
   border-radius: 50%;
   color: #61dafb;
-  background-color: tomato;
+  background-color: red;
   margin-left: 10px;
 }
 #circle2 {
@@ -14,7 +14,23 @@
   height: 20px;
   border-radius: 50%;
   color: #61dafb;
+  background-color: rgb(254, 137, 116);
+  margin-left: 10px;
+}
+#circle3 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #61dafb;
   background-color: gold;
+  margin-left: 10px;
+}
+#circle4 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #61dafb;
+  background-color: greenyellow;
   margin-left: 10px;
 }
 p {
