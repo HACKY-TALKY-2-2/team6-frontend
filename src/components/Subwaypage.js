@@ -24,7 +24,7 @@ const SubwayPage = ({ naver }) => {
     const map = new naver.maps.Map("map", mapOptions);
     //지하철아이콘 초기 위치
     const firstsubwayInitialPosition = new naver.maps.LatLng(37.505, 127.0371);
-    const secondbusInitialPosition= new naver.maps.LatLng(37.505, 127.0371);
+    const secondbusInitialPosition = new naver.maps.LatLng(37.505, 127.0371);
     // 이미지 아이콘 설정
     const subway = {
       url: subwayicon1,
@@ -51,16 +51,17 @@ const SubwayPage = ({ naver }) => {
 
     // 위치 업데이트 함수 (예시로 1초마다 랜덤 위치로 업데이트)
     const updatePosition = async () => {
-      try{
-      const response = await axios.get('http://54.180.85.164:4000/traffic/subway');
+      const response = await axios.get(
+        "http://54.180.85.164:4000/traffic/subway"
+      );
       console.log(response.data);
-      const newPosition = new naver.maps.LatLng( 
-        response.data[0].curPos.x, 
+      const newPosition = new naver.maps.LatLng(
+        response.data[0].curPos.x,
         response.data[0].curPos.y
       );
 
-      const newPosition2 = new naver.maps.LatLng( 
-        response.data[1].curPos.x, 
+      const newPosition2 = new naver.maps.LatLng(
+        response.data[1].curPos.x,
         response.data[1].curPos.y
       );
       const gsTowerMarker = new naver.maps.Marker({
@@ -69,8 +70,6 @@ const SubwayPage = ({ naver }) => {
       });
       marker.setPosition(newPosition);
       marker2.setPosition(newPosition2);
-
-      }
     };
 
     // 1초마다 위치 업데이트
