@@ -1,11 +1,10 @@
-
 import "./App.css";
-import React, { useEffect, useState } from 'react';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Footer from './components/Footer';
-import styled from 'styled-components';
-import bus from './images/bus.png'
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
+import styled from "styled-components";
+import bus from "./images/bus.png";
 
 const Container = styled.div`
   display: flex;
@@ -27,7 +26,7 @@ const App = ({ naver }) => {
 
     // 이미지 아이콘 설정
     const icon = {
-      url: bus, 
+      url: bus,
       size: new naver.maps.Size(20, 20),
       scaledSize: new naver.maps.Size(20, 20),
     };
@@ -56,19 +55,16 @@ const App = ({ naver }) => {
       map: map,
       position: new naver.maps.LatLng(37.50185, 127.0371),
     });*/
-
-  }, [])
+  }, []);
 
   return (
     <Container>
       <Header />
       <MainContent>
         {/* 콘텐츠 추가 */}
-        <div id="map" style={{width:'100%', height:'400px'}}></div>
+        <div id="map" style={{ width: "100%", height: "400px" }}></div>
       </MainContent>
-      <Footer>
-        {/*푸터 콘텐츠*/}
-      </Footer>
+      <Footer>{/*푸터 콘텐츠*/}</Footer>
     </Container>
   );
 };
