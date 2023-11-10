@@ -51,8 +51,18 @@ const SubwayPage = ({ naver }) => {
     const updatePosition = async () => {
       try{
       const response = await axios.get('http://54.180.85.164:4000/traffic/subway');
-        const data = response.data;
-        console.log(data);
+      console.log(response.data);
+      const newPosition = new naver.maps.LatLng( 
+        response.data[0].curPos.x, 
+        response.data[0].curPos.y
+      );
+
+      const newPosition2 = new naver.maps.LatLng( 
+        response.data[1].curPos.x, 
+        response.data[1].curPos.y
+      );
+      marker.setPosition(newPosition);
+      marker2.setPosition(newPosition2);
 
       }
       catch(err){console.log(err)}
