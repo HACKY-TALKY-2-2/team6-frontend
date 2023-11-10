@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { Icon, IconSize } from "@channel.io/bezier-react";
 import { ChannelBtnSmileFilledIcon } from "@channel.io/bezier-icons";
-import { Banner, BannerVariant, Emoji } from "@channel.io/bezier-react";
+import { Banner, BannerVariant } from "@channel.io/bezier-react";
 import { CheckCircleFilledIcon, LightbulbIcon } from "@channel.io/bezier-icons";
 import axios from "axios";
 
@@ -21,6 +21,30 @@ const BusArrivalMessage = () => {
   const bus2_minutes = Math.floor(bus2Sec / 60);
   const bus2_seconds = bus2Sec % 60;
   const bus2_number = 147;
+
+  // Function to determine circle styles based on congestion level
+  const getCircleStyles = (congestion) => {
+    const baseStyle = {
+      width: "20px",
+      height: "20px",
+      borderRadius: "50%",
+      marginLeft: "10px",
+    };
+
+    switch (congestion) {
+      case 3:
+        return { ...baseStyle, backgroundColor: "green" };
+      case 4:
+        return { ...baseStyle, backgroundColor: "yellow" };
+      case 5:
+        return { ...baseStyle, backgroundColor: "orange" };
+      case 6:
+        return { ...baseStyle, backgroundColor: "red" };
+      default:
+        return baseStyle;
+    }
+  };
+
   const iconStyle = {
     display: "inline-block",
     marginRight: "10px", // 조절 가능한 여백
@@ -33,10 +57,10 @@ const BusArrivalMessage = () => {
     alignItems: "center",
     justifyContent: "flex-start",
     textAlign: "left",
-    marginRight: "20px", // 간격 조절
+    marginLeft: "20px", // 간격 조절
   };
-  const emojiStyle = {
-    marginLeft: "15px", // 이모지 왼쪽 여백 조절
+  const renderCircles = (congestion) => {
+    return [<div key={0} style={getCircleStyles(congestion)} />];
   };
 
   setInterval(async () => {
@@ -69,7 +93,7 @@ const BusArrivalMessage = () => {
           icon={CheckCircleFilledIcon}
           content={`${bus1_minutes}분 ${bus1_seconds}초 뒤 ${bus1_number}버스가 도착해요!`}
         />
-        <div id="circle1"></div>
+        {renderCircles(bus1Congestion)}
       </div>
 
       <div style={messageContainerStyle}>
@@ -84,7 +108,7 @@ const BusArrivalMessage = () => {
           icon={LightbulbIcon}
           content={`${bus2_minutes}분 ${bus2_seconds}초 뒤 ${bus2_number}버스가 도착해요!`}
         />
-        <div id="circle2"></div>
+        {renderCircles(bus2Congestion)}
       </div>
     </div>
   );
