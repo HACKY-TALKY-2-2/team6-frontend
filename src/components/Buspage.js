@@ -50,6 +50,11 @@ const BusPage = ({ naver }) => {
       icon: bus2,
     });
 
+    const gsTowerMarker = new naver.maps.Marker({
+      map: map,
+      position: new naver.maps.LatLng(37.50185, 127.0371),
+    });
+
     // 위치 업데이트 함수 (예시로 1초마다 랜덤 위치로 업데이트)
     const updatePosition = async () => {
       try{
