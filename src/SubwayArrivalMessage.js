@@ -10,16 +10,8 @@ import axios from "axios";
 const SubwayArrivalMessage = () => {
   // Calculate the time until the bus arrives (replace this with your logic)
 
-  const [subway1Sec, setsubway1Sec] = useState(500);
-  const [subway2Sec, setsubway2Sec] = useState(1000);
-
-  const subway1_minutes = Math.floor(subway1Sec / 60);
-  const subway1_seconds = subway1Sec % 60;
-  const subway1_way = 147;
-
-  const subway2_minutes = Math.floor(subway2Sec / 60);
-  const subway2_seconds = subway2Sec % 60;
-  const subway2_way = 147;
+  const [subway1Sec, setsubway1Sec] = useState({ message: "500" });
+  const [subway2Sec, setsubway2Sec] = useState({ message: "1000" });
 
   const iconStyle = {
     display: "inline-block",
@@ -42,8 +34,8 @@ const SubwayArrivalMessage = () => {
         "http://54.180.85.164:4000/traffic/subway"
       );
       const data = response.data;
-      setsubway1Sec(data[0].sec);
-      setsubway2Sec(data[1].sec);
+      setsubway1Sec(data[0]);
+      setsubway2Sec(data[1]);
     } catch (err) {
       console.log(err);
       console.log(err.data);
@@ -62,7 +54,9 @@ const SubwayArrivalMessage = () => {
         <Banner
           variant={BannerVariant.Green}
           icon={CheckCircleFilledIcon}
-          content={`${subway1_minutes}분 ${subway1_seconds}초 뒤 ${subway1_way} 2호선이 도착해요!`}
+          content={`${subway1Sec.message.split("방면")[0] + "방면"} 2호선이 ${
+            subway1Sec.message.split("방면")[1]
+          } 후에 도착해요!, 현재 ${subway1Sec.curStn}역에 있어요.`}
         />
       </div>
 
@@ -76,7 +70,9 @@ const SubwayArrivalMessage = () => {
         <Banner
           variant={BannerVariant.Default}
           icon={LightbulbIcon}
-          content={`${subway2_minutes}분 ${subway2_seconds}초 뒤 ${subway2_way} 2호선이 도착해요!`}
+          content={`${subway2Sec.message.split("방면")[0] + "방면"} 2호선이 ${
+            subway2Sec.message.split("방면")[1]
+          } 후에 도착해요!, 현재 ${subway2Sec.curStn}역에 있어요.`}
         />
       </div>
     </div>

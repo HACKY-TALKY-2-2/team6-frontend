@@ -57,7 +57,6 @@ const BusArrivalMessage = () => {
     alignItems: "center",
     justifyContent: "flex-start",
     textAlign: "left",
-    marginLeft: "20px", // 간격 조절
   };
   const renderCircles = (congestion) => {
     return [<div key={0} style={getCircleStyles(congestion)} />];
