@@ -1,5 +1,5 @@
-
 import "./App.css";
+
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
@@ -9,6 +9,7 @@ import busicon1 from './images/bus.png'
 import busicon2 from './images/bus1.png'
 import { AlphaSmoothCornersBox } from "@channel.io/bezier-react";
 import axios from 'axios'
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -105,11 +106,9 @@ const App = ({ naver }) => {
       <Header />
       <MainContent>
         {/* 콘텐츠 추가 */}
-        <div id="map" style={{width:'100%', height:'400px'}}></div>
+        <div id="map" style={{ width: "100%", height: "400px" }}></div>
       </MainContent>
-      <Footer>
-        {/*푸터 콘텐츠*/}
-      </Footer>
+      <Footer>{/*푸터 콘텐츠*/}</Footer>
     </Container>
   );
 };

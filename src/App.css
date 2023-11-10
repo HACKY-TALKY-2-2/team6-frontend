@@ -1,9 +1,24 @@
 .App {
   text-align: center;
 }
-
+#circle1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #61dafb;
+  background-color: tomato;
+  margin-left: 10px;
+}
+#circle2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #61dafb;
+  background-color: gold;
+  margin-left: 10px;
+}
 p {
-   font-size: 30px !important;
+  font-size: 30px !important;
 }
 
 .App-logo {
